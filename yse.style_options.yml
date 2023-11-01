@@ -1,0 +1,327 @@
+# Configuration files should be named [theme|module machine name].style_options.yml
+# and placed in the root folder of the applicable theme/module.
+
+# The "options" section defines all available options.
+options:
+  # The name "example_class" is arbitrary.
+  spacing_group:
+    # See \Drupal\style_options\OptionPlugin\CssClass
+    plugin: yse_css_class
+    label: 'Top Spacing'
+    # Defaults to false.
+    multiple: false
+    options:
+      -
+        label: '- No Value -'
+        class: ''
+      -
+        label: '- Nullify Value -'
+        class: nullify
+      -
+        label: 'Default'
+        class: global-spacing--default
+      -
+        label: 'Small'
+        class: global-spacing--small
+      -
+        label: 'Medium'
+        class: global-spacing--medium
+      -
+        label: 'Large'
+        class: global-spacing--large
+      -
+        label: 'X Large'
+        class: global-spacing--xlarge
+      -
+        label: '2X Large'
+        class: global-spacing--xxlarge
+      -
+        label: '2X-Small'
+        class: global-spacing--2xsmall
+      -
+        label: '3X-Small'
+        class: global-spacing--3xsmall
+      -
+        label: 'Special Large'
+        class: global-spacing--speciallarge
+  padding_group:
+    # See \Drupal\style_options\OptionPlugin\CssClass
+    plugin: yse_css_class
+    label: 'Padding'
+    # Defaults to false.
+    default: global-padding--xlarge
+    multiple: true
+    options:    
+      -
+        label: '- No Value -'
+        class: ''
+      -
+        label: '- Nullify Value -'
+        class: nullify
+      -
+        label: 'Default'
+        class: global-padding--default
+      -
+        label: 'Small'
+        class: global-padding--small
+      -
+        label: 'X-Small'
+        class: global-padding--xsmall
+      -
+        label: '2X-Small'
+        class: global-padding--2xsmall
+      -
+        label: '3X-Small'
+        class: global-padding--3xsmall
+      -
+        label: 'Medium'
+        class: global-padding--medium
+      -
+        label: 'Large'
+        class: global-padding--large
+      -
+        label: 'X-Large'
+        class: global-padding--xlarge
+      -
+        label: '2X-Large'
+        class: global-padding--2xlarge
+
+  # I WONDER IF I CAN USE SAME MODULE AND REACH IT VIA NODE FOR HERO?
+  hero_behavior:
+    # See \Drupal\style_options\OptionPlugin\CssClass
+    plugin: yse_css_class
+    label: 'Hero Behavior'
+    # Defaults to false.
+    multiple: false
+    options:    
+      -
+        label: '- No Value -'
+        class: ''
+      -
+        label: '- Nullify Value -'
+        class: nullify
+      -
+        label: 'Hero Blue Box'
+        class: 'hero--home--box hero--home--box-blue'
+      -
+        label: 'Hero White Box'
+        class: hero--home--box
+      -
+        label: 'Hero No Box Overlay Style'
+        class: hero--home--nobox-overlay
+  text_column_group:
+    # See \Drupal\style_options\OptionPlugin\CssClass
+    plugin: yse_css_class
+    label: 'Text Column Behavior'
+    # Defaults to false.
+    multiple: false
+    options:
+      -
+        label: '- No Value -'
+        class: ''
+      -
+        label: '- Nullify Value -'
+        class: nullify
+      -
+        label: 'center'
+        class: 'medium-10 medium-offset-1 large-8 large-offset-2'
+      -
+        label: 'left'
+        class: 'medium-10 large-8'
+      -
+        label: 'right'
+        class: 'medium-10 medium-offset-2 large-8 large-offset-4'
+  background_color_group:
+    # See \Drupal\style_options\OptionPlugin\CssClass
+    plugin: yse_css_class
+    label: 'Background Color Class'
+    # Defaults to false.
+    multiple: false
+    options:
+      -
+        label: '- No Value -'
+        class: ''
+      -
+        label: '- Nullify Value -'
+        class: nullify
+      -
+        label: 'Cream'
+        class: cream
+      -
+        label: 'Extra-light Blue'
+        class: blue--xlight
+      -
+        label: 'TFS Green'
+        class: 'green'
+      -
+        label: 'White'
+        class: white
+      -
+        label: 'Yale Blue'
+        class: blue--dark
+      -
+        label: 'Yale Intense Blue'
+        class: blue
+  background_pattern_group:
+  # See \Drupal\style_options\OptionPlugin\CssClass
+    plugin: yse_css_class
+    label: 'Background Pattern Class'
+    # Defaults to false.
+    multiple: false
+    options:
+      -
+        label: '- No Value -'
+        class: ''
+      -
+        label: '- Nullify Value -'
+        class: nullify
+      -
+        label: 'Topographic Map'
+        class: topographic-map
+  # The name "bg_color" is arbitrary.
+  font_group:
+  # See \Drupal\style_options\OptionPlugin\CssClass
+    plugin: yse_css_class
+    label: 'Font Behavior Class'
+    # Defaults to false.
+    multiple: false
+    options:
+      -
+        label: '- No Value -'
+        class: ''
+      -
+        label: '- Nullify Value -'
+        class: nullify
+      -
+        label: 'Sidebar Article'
+        class: sidebar-article
+      -
+        label: 'Sidebar Article with White Text'
+        class: 'sidebar-article invert-text'
+      -
+        label: 'White Text'
+        class: invert-text
+
+  feature_bundle_behavior:
+  # See \Drupal\style_options\OptionPlugin\CssClass
+    plugin: yse_css_class
+    label: 'Feature Bundle Behavior'
+    # Defaults to false.
+    multiple: false
+    options:
+      -
+        label: '- No Value -'
+        class: ''
+      -
+        label: '- Nullify Value -'
+        class: nullify
+      -
+        label: 'Static Single Large Side-by-Side'
+        class: single-large
+      -
+        label: 'Static Large Stacked with Smalls'
+        class: single-large-small
+      -
+        label: 'Static Two Large'
+        class: two-large
+      -
+        label: 'Swiper One-Up'
+        class: swiper-one-up
+      -
+        label: 'Swiper Three-up'
+        class: swiper-three-up
+      -
+        label: 'Swiper Four-up'
+        class: swiper-four-up
+      -
+        label: 'Swiper Five-up'
+        class: swiper-five-up
+      -
+        label: 'Swiper Six-up'
+        class: swiper-six-up
+  bg_color:
+    # See \Drupal\style_options\OptionPlugin\BackgroundColor
+    plugin: background_color
+    label: Background Color
+    # can be "css" or "inline"
+    method: inline
+    # Settings are passed as JS options.
+    # See https://bgrins.github.io/spectrum/ for more info.
+    settings:
+      allowEmpty: TRUE
+      showInput: TRUE
+      showAlpha: TRUE
+      showPalette: TRUE
+      appendTo: '.ui-dialog-content'
+      palette:
+        -
+          - "#CC0000"
+          - "#E04800"
+          - "#F29300"
+          - "#FDC400"
+        -
+          - "#44284D"
+          - "#6C3E6C"
+          - "#9C5A9D"
+          - "#3FA447"
+        -
+          - "#00659B"
+          - "#0098CE"
+          - "#e9eff4"
+          - "#130F13"
+        -
+          - "#261F26"
+          - "#363136"
+          - "#504B50"
+          - "#777277"
+
+# The "contexts" section defines which options should be available for specific contexts,
+# i.e. specific Layout Plugins, Paragraph Types, etc.
+contexts:
+  # Configure which options should be available for layout plugins.
+  layout:
+    # Defines defaults for all layouts.
+    _defaults:
+      options:
+        example_class:
+          # This option will show as a main layout option.
+          layout: true
+          # This option will also appear for each region.
+          regions: true
+    # Defines specific overrides for one column layouts
+    layout_onecolumn:
+      # Disables options defined as defaults
+      _disable:
+        - example_class
+      options:
+        ## The bg_color option will appear for layout_onecolumn only.
+        bg_color:
+          layout: true
+
+  # Configure which options should be available for paragraph behaviors.
+  paragraphs:
+    _defaults:
+      options:
+        padding_group: true
+        spacing_group: true
+        background_color_group: true
+        background_pattern_group: true
+        font_group: true
+        bg_color: true
+    yse_news_feature_panel:
+      _disable:
+        - example_class
+        - background_color_group
+        - background_pattern_group
+      options:
+        feature_bundle_behavior: true
+        padding_group: true
+        spacing_group: true
+    yse_bundle_full_feature_wysiwyg:
+      _disable:
+        - example_class
+      options:
+        bg_color: true
+        padding_group: true
+        spacing_group: true
+        text_column_group: true
