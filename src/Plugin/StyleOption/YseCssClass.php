@@ -85,14 +85,8 @@ class YseCssClass extends StyleOptionPluginBase {
       }
     }
 
-    $existingatts = $build['#attributes']['class'] ? $build['#attributes']['class'] : [];
-    // $dumpthis = implode(' ', $existingatts);
-    //\Drupal::logger('yse_css_class')->notice('classlist is %c', ['%c' => $dumpthis]);
-    // $build['paragraph']['values']['field_feature_config_switch'] is there.
-    // consider plugins here
-    // if($this->classgroupLogicManager->getDefinition($class_group)){
-    //  $plugin = $this->classgroupLogicManager->createInstance($class_group, ['of' => 'configuration values']);
-    // }
+    $existingatts = !empty($build['#attributes']['class']) ? $build['#attributes']['class'] : [];
+
     if (!empty($classes)) {
       // Ensure $classes is an array so it can be easily manipulated later.
       $classes = is_array($classes) ? $classes : explode(' ', $classes);

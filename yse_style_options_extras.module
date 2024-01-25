@@ -24,3 +24,9 @@ function yse_style_options_extras_help($route_name, RouteMatchInterface $route_m
   }
   return NULL;
 }
+
+use Drupal\menu_link_content\MenuLinkContentInterface;
+
+function yse_style_options_extras_menu_link_content_presave(MenuLinkContentInterface $menu_link) {
+  \Drupal::messenger()->addStatus(t('Yep %y .', ['%y' => $menu_link->title->value ]));
+}
