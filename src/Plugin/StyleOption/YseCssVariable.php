@@ -36,10 +36,23 @@ class YseCssVariable extends StyleOptionPluginBase {
       $form['css_var']['#type'] = 'number';
       $params = $this->getConfiguration('params');
 
-      foreach($params as $idx => $pair){
+      foreach ($params as $idx => $pair) {
         $form['css_var'][$pair['param']] = $pair['value'];
       }
     }
+
+    if ($this->hasConfiguration('options')) {
+      $form['css_var']['#type'] = 'select';
+      $options = $this->getConfiguration()['options'];
+      array_walk($options, function (&$option) {
+        $option = $option['label'];
+      });
+      if ($this->hasConfiguration('multiple')) {
+        $form['css_var']['#multiple'] = TRUE;
+      }
+      $form['css_var']['#options'] = $options;
+    }
+
     return $form;
   }
 
@@ -49,10 +62,18 @@ class YseCssVariable extends StyleOptionPluginBase {
    */
   public function build(array $build) {
     $css_var = $this->getConfiguration('css_var') ?? 'empty-var';
-    $format  = $this->getConfiguration('format');
+    $options = $this->getConfiguration('options') ?? [];
+    $format = $this->getConfiguration('format');
     $value = $this->getValue('css_var') ?? NULL;
     if (!empty($value)) {
-      $value = !empty($format) ? sprintf($format, $value) : $value;
+      //options mean we used a select
+      if (!empty($options)) {
+        $idx = $value;
+        $value = $options[$idx]['value'] ?? NULL;
+      }
+      else {
+        $value = !empty($format) ? sprintf($format, $value) : $value;
+      }
       $build['#attributes']['css_vars'][$css_var] = "--{$css_var}: {$value};";
     }
     return $build;
