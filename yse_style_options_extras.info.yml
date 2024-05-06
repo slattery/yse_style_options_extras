@@ -4,3 +4,4 @@ description: Adding our own plugin to the style_options paragraph behavior modul
 core_version_requirement: ^9 || ^10
 dependencies:
   - style_options:style_options
+version: v1.2.0
