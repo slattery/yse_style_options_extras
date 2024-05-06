@@ -1,7 +1,8 @@
-type: module
-name: YSE Style Options Extras
-description: Adding our own plugin to the style_options paragraph behavior module.
-core_version_requirement: ^9 || ^10
+---
+core_version_requirement: '^9 || ^10'
 dependencies:
   - style_options:style_options
-version: v1.2.0
+description: 'Adding our own plugin to the style_options paragraph behavior module.'
+name: 'YSE Style Options Extras'
+type: module
+version: v1.2.3
