@@ -1,0 +1,9 @@
+yse_style_options_extras.style_options_base:
+  type: mapping
+  label: 'Settings for local style_options configs per type'
+  mapping:
+    settings:
+      type: sequence
+      label: 'YAML text to choose the plugin class and options'
+      sequence:
+        type: sequence

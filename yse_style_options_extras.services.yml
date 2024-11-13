@@ -1,0 +1,10 @@
+services:
+  yse_style_options_extras.discovery_extras:
+    class: Drupal\yse_style_options_extras\Service\StyleOptionConfigurationDiscoveryDecorator
+    decorates: style_options.discovery
+    decoration_on_invalid: ignore
+    public: true
+    arguments:
+      - '@yse_style_options_extras.discovery_extras.inner'
+      - '@theme_handler'
+      - '@module_handler'

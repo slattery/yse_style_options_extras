@@ -37,7 +37,7 @@ class YseCssClass extends StyleOptionPluginBase {
     if ($this->hasConfiguration('options')) {
       $form['css_class']['#type'] = 'select';
       $options = $this->getConfiguration()['options'];
-
+      $configset = $this->getConfiguration()['option_id'];
       if (
         class_exists('\Drupal\image_radios\Element\ImageRadios') &&
         count(array_filter($options, function ($option) {
@@ -54,7 +54,6 @@ class YseCssClass extends StyleOptionPluginBase {
           $form['css_class']['#multiple'] = TRUE;
         }
       }
-
       $form['css_class']['#options'] = $options;
     }
 
