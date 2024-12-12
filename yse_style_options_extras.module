@@ -1,8 +1,6 @@
 <?php
 
-use Drupal\Core\Render\BubbleableMetadata;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\Component\Utility\Html;
 
 /**
  * Implements hook_help().
@@ -23,5 +21,16 @@ function yse_style_options_extras_help($route_name, RouteMatchInterface $route_m
     }
   }
   return NULL;
+}
+
+/**
+ * Implements hook_paragraphs_behavior_info_alter()
+ *
+ * Extends the default style options behavior with our own. This adds
+ * a YAML field to the paragraph type form to store local style config.
+ */
+
+function yse_style_options_extras_paragraphs_behavior_info_alter(&$paragraphs_behavior) {
+  $paragraphs_behavior['style_options']['class'] = '\Drupal\yse_style_options_extras\Plugin\paragraphs\Behavior\StyleOptionsExtrasBehavior';
 }
 
