@@ -17,6 +17,12 @@ There is also a YAML Discovery Decorator that looks through paragraph type
 configuration and adds those structures to the default YAML file-based discovery
 in themes and modules.
 
+## Config
+
+We set the yaml_editor.source_editor value to this CDN URL:
+'<https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ace.js>'
+You can reset this at /admin/config/development/yaml_editor.
+
 ## Plugins
 
 ### yse_data_attribute
