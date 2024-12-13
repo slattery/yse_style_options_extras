@@ -41,8 +41,6 @@ class YamlDiscoverableDecorator extends YamlDiscovery {
    * {@inheritdoc}
    */
   public function findAll() {
-    \Drupal::logger('yse_style_options_extras')->notice('decorating all');
-
     return parent::findAll() + $this->decorated->findAll();
   }
 

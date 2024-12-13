@@ -37,13 +37,10 @@ class StyleOptionConfigurationDiscoveryDecorator extends StyleOptionConfiguratio
     parent::__construct($theme_handler, $module_handler);
   }
 
-  //what matters is getDefinitions
   protected function discovery(): YamlDiscoverableDecorator {
-    \Drupal::logger('yse_style_options_extras')->notice('disco all');
     $dirdiscov = new ParagraphTypeConfigBehaviorDiscovery(static::CONFIG_NAME);
     return new YamlDiscoverableDecorator($dirdiscov, static::CONFIG_NAME,
-     $this->moduleHandler->getModuleDirectories() + $this->themeHandler->getThemeDirectories());
-
+      $this->moduleHandler->getModuleDirectories() + $this->themeHandler->getThemeDirectories());
   }
 
 }
