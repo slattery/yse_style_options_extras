@@ -30,7 +30,7 @@ class StyleOptionsExtrasBehavior extends StyleOptionBehavior {
    * @param \Drupal\Core\Entity\EntityFieldManagerInterface $entity_field_manager
    *   The entity field manager.
    *
-  */
+   */
 
   public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityFieldManagerInterface $entity_field_manager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $entity_field_manager);
@@ -44,11 +44,12 @@ class StyleOptionsExtrasBehavior extends StyleOptionBehavior {
     );
   }
 
-  public function buildConfigurationForm(array $form, FormStateInterface $form_state){
+  public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $yaml_default = '';
-    if( $yaml_state = $this->configuration['settings'] ){
+    if (isset($this->configuration['settings'])) {
       try {
         // Attempt to parse the YAML
+        $yaml_state = $this->configuration['settings'];
         $yaml_default = Yaml::dump($yaml_state, 5);
       }
       catch (ParseException $e) {
